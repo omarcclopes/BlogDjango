@@ -5,5 +5,6 @@ app_name = 'django_app'
 
 urlpatterns = [
     #pagina inicial
-    path('',views.index, name='index'),
+    path('index',views.index, name='index'),
+    path('teste',views.teste, name='teste'),
 ]
