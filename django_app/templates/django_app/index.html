@@ -11,4 +11,11 @@
 
     <p> Selecione a opção no menu superior.</p>
 
+<ul class="list-group">
+  {% for Post in object_list %}
+      <li>{{ post.titulo}} - {{ post.autor }}<br/>
+      {{ post.corpo}}</li>
+  {% endfor %}
+<ul>
+
 {% endblock content %}

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView
 from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -8,11 +9,14 @@ from .forms import PostForm
 
 # Create your views here.
 #from django.http import HttpResponse
+class HomeView(ListView):
+    model = Post
+    template_name = 'home.html'
 
 def index(request):
-    dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
-#    return HttpResponse("<h1>Olá mundo, Django!</h1>")
-    return render(request, 'django_app/index.html', dicionario_contexto)
+     dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
+
+     return render(request, 'django_app/index.html', dicionario_contexto)
     
 def teste(request):
     return render(request, 'django_app/teste.html')
