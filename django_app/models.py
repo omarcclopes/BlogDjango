@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Autor(models.Model):
@@ -19,6 +20,7 @@ class Post(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.RESTRICT, blank=True, null=True)
     corpo = models.TextField(max_length=5000, blank=True, null=True)
     autor = models.ForeignKey(Autor, on_delete=models.RESTRICT, blank=True, null=True)
+    owner = models.ForeignKey(User, on_delete=models.RESTRICT)
     # data = models.DateField(db_index=True, auto_now_add=True, null=True)
 
     def __str__(self):

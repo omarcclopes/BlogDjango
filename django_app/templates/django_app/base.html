@@ -32,6 +32,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'django_app:novo_post'%}">Postar</a>
+  </div>
       </li>
       {% comment %} <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,6 +45,22 @@
         </div>
       </li> {% endcomment %}
     </ul>
+  {% if user.is_authenticated  %}
+    <div class="text-light">
+      Olá, {{ user.username }}.
+    </div>
+    <a href={% url 'users:logout' %}>
+      <button name="button" class="btn btn-danger">Sair</button>
+    </a>
+  {% else %}
+    <a href="{% url 'users:register' %}">
+      <button name="button" class="btn btn-dark">Registrar</button>
+    </a>
+    <a href="{% url 'users:login' %}">
+      <button name="button" class="btn btn-light">Autenticar</button>
+    </a>
+  {% endif %}
+
   </div>
 </nav>
 

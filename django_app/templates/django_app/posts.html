@@ -3,13 +3,13 @@
 
 {% block content %} 
 
-    <h1>Posts do Blog</h1>
+    <h1>Posts do Blog <a href="{% url 'django_app:novo_post' %}"><button type="button" class="btn btn-info">Novo</button></a></h1>
 
     <table class="table">
       <thead class="thead-dark">
         <th scoope="col">ID</th>
         <th scoope="col">Título</th>
-        <th scoope="col">Autor</th>
+        <th scoope="col">Proprietário</th>
         <th scoope="col">Ações</th>
       </thead>
       <tbody>
@@ -17,7 +17,7 @@
         <tr>
           <th>{{ post.id}}</th>
           <td>{{ post.titulo }}</td>
-          <td>{{ post.autor }}</td>
+          <td>{{ post.owner }}</td>
           <td><a href="{% url 'django_app:edit_post' post.id %}"><button type="button" class="btn btn-info">Editar</button></a> </td>
         </tr>
         {% empty %}
