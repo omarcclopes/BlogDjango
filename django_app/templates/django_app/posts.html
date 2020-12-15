@@ -3,7 +3,7 @@
 
 {% block content %} 
 
-    <h1>Posts do Blog <a href="{% url 'django_app:novo_post' %}"><button type="button" class="btn btn-info">Novo</button></a></h1>
+    <h1>Posts do Blog          <a href="{% url 'django_app:novo_post' %}"><button type="button" class="btn btn-info">Novo Post</button></a>          <a href="{% url 'django_app:novo_autor' %}"><button type="button" class="btn btn-info">Novo Autor</button></a>          <a href="{% url 'django_app:novo_categoria' %}"><button type="button" class="btn btn-info">Nova Categoria</button></a></h1>
 
     <table class="table">
       <thead class="thead-dark">

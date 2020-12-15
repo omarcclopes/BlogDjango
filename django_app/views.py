@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Post
 from .forms import PostForm
+from .forms import AutorForm
+from .forms import CategoriaForm
 
 # Create your views here.
 #from django.http import HttpResponse
@@ -58,4 +60,29 @@ def edit_post(request, edit_id):
 
     context = {'post' : post, 'form' : form}   
     return render(request, 'django_app/edit_post.html', context)
+
+
+def novo_autor(request):
+        # ver se a pagina é requisitada pelo metodo POST (VER GET E POST)
+    if request.method != 'POST':
+        form = AutorForm
+    else:
+        form = AutorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('django_app:posts'))
+    context = {'form' : form}
+    return render(request, 'django_app/novo_autor.html', context)
     
+
+def novo_categoria(request):
+        # ver se a pagina é requisitada pelo metodo POST (VER GET E POST)
+    if request.method != 'POST':
+        form = CategoriaForm
+    else:
+        form = CategoriaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('django_app:posts'))
+    context = {'form' : form}
+    return render(request, 'django_app/novo_categoria.html', context)

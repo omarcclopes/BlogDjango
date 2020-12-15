@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h1> Adicionar Novo Post </h1>
+<h1> Adicionar Novo Post <a href="{% url 'django_app:novo_autor' %}"><button type="button" class="btn btn-info">Novo Autor</button></a>     <a href="{% url 'django_app:novo_categoria' %}"><button type="button" class="btn btn-info">Nova Categoria</button></a></h1>
 
 <form action="{% url 'django_app:novo_post' %}" method='post'>
     {% csrf_token %}
