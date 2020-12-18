@@ -5,7 +5,7 @@ Projeto de Blog desenvolvido com Python e Django
 
 Blog simples, feito apenas com o conhecimento adquirido, durante as nossas aulas no curso de GTI 2º período, entregue como última atividade do P2 de GTI da FACET 2020. 
 
-Só acrescentei de foara das aulas a pasta "Static" (para colocar a imagem do logo.jpg)
+Só acrescentei de fora das aulas, a pasta "Static" (para colocar a imagem do logo.jpg)
 
 Posteriormente durante as férias, pretendo estudar um pouco mais de Python e Django, para conseguir uma aparência mais organizada, e “bonita” pare este projeto.
 
